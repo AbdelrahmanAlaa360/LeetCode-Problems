@@ -5,6 +5,6 @@ public:
         string ans = b.to_string();
         reverse(ans.begin(), ans.end());        
         bitset<32>b2(ans);
-        return b2.to_ulong();        
+        return b2.to_ullong();        
     }
 };
