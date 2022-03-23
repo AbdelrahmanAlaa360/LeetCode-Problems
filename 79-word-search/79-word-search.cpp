@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool ans = false;
-    void search(vector<vector<char>>&board, int i, int j, string word, int idx) {
+    void search(vector<vector<char>>&board, int i, int j, string &word, int idx) {
         if (idx == word.size()) {
             ans = true;
             return;
