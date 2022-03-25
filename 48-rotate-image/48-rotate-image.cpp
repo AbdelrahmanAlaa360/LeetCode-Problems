@@ -1,7 +1,6 @@
 class Solution {
 public:
-    void rotate(vector<vector<int>>& matrix) {       
-        fast();
+    void rotate(vector<vector<int>>& matrix) {        
         int left = 0, right = matrix.size() - 1;
         while (left < right) {
             for (int j = 0; j < right - left; j++) {
@@ -14,9 +13,5 @@ public:
             }
             left++, right--;
         }
-    }
-    void fast() {
-        std::ios_base::sync_with_stdio(0);
-        cin.tie(0); cout.tie(0);        
     }
 };
