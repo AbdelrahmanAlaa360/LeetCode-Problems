@@ -10,7 +10,7 @@
  */
 class Solution {
 public:
-    ListNode* head1, *head2;
+    ListNode *head1, *head2;
     void addToList(ListNode* &temp, ListNode* &node){
         while(temp->next!=NULL){
             temp=temp->next;
@@ -38,7 +38,8 @@ public:
                 }
             }
             temp = temp->next;
-        } 
+            
+        }         
         temp = head1;
         if(temp == NULL)return head2;
         while(temp->next!=NULL){
