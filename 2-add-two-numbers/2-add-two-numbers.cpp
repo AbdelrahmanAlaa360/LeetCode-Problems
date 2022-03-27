@@ -22,6 +22,7 @@ public:
         head = extra;             
     }
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+        fast();
         ListNode* temp1 = l1, *temp2 = l2;  
         stack<int>res;
         int carry = 0;
@@ -52,5 +53,9 @@ public:
             res.pop();
         }        
         return head;
+    }
+    void fast(){
+        std::ios_base::sync_with_stdio(0);
+        cin.tie(0); cout.tie(0);
     }
 };
