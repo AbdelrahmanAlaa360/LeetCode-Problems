@@ -21,14 +21,11 @@ public:
         int sizeA = getSize(headA);
         int sizeB = getSize(headB);
         ListNode* tempA = headA, *tempB = headB;
-        if(headA == headB){
-            return headA;
-        }
-        while(sizeB > sizeA && tempB->next != NULL){
+        while(sizeB > sizeA && tempB != NULL){
             tempB = tempB->next;
             sizeB--;
         }
-        while(sizeA > sizeB && tempA->next != NULL){
+        while(sizeA > sizeB && tempA != NULL){
             tempA = tempA->next;
             sizeA--;
         }
