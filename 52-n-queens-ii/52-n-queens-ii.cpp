@@ -13,7 +13,7 @@ public:
                 nQueen(row +1, cnt+1, n);
                 col[j] = rightDiagonal[row-j+n] = leftDiagonal[row+j] = false;
             }
-        }                
+        }
     } 
     int totalNQueens(int n) {
         nQueen(0, 0, n);
