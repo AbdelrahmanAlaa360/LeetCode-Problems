@@ -16,41 +16,39 @@ public:
 
 class Solution {
 public:
-    Node* newHead;    
+    Node* newHead, *tail;
     unordered_map<Node*, int>originalLocation;
     unordered_map<int, Node*>newLocationPos;
     int idx = 0, idx2 = 0;
-    void createNode(int nodeVal){        
-        Node* newNode = new Node(nodeVal);                
-        newLocationPos[idx2++] = newNode;        
+    void createNode(int nodeVal){
+        Node* newNode = new Node(nodeVal);   
+        newLocationPos[idx2++] = newNode;
         if(newHead == NULL){
             newHead = newNode;
+            tail = newNode;
             return;
         }
-        Node* temp = newHead;
-        while(temp->next!=NULL){
-            temp = temp->next;            
-        }
-        temp->next = newNode;
+        tail->next = newNode;
+        tail = newNode;
     }
     void connectRandom(int randPos, int currPos){
         Node* rand = newLocationPos[randPos];
         Node* curr = newLocationPos[currPos];
-        curr->random = rand;        
+        curr->random = rand;
     }
     Node* copyRandomList(Node* head) {
-        Node* temp = head;        
-        while(temp!=NULL){            
-            originalLocation[temp] = idx++; 
+        Node* temp = head;
+        while(temp!=NULL){
+            originalLocation[temp] = idx++;
             createNode(temp->val);
-            temp=temp->next;          
+            temp=temp->next;
         }
         temp=head;
         while(temp!=NULL){
             if(temp->random!=NULL){
                 int randPos = originalLocation[temp->random];
                 int currPos = originalLocation[temp];
-                connectRandom(randPos, currPos);                
+                connectRandom(randPos, currPos);
             }
             temp=temp->next;
         }
