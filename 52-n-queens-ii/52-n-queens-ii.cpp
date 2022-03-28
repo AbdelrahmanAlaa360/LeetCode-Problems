@@ -8,10 +8,10 @@ public:
             ans++;
             return;
         }
-        for(int j=0;j<n;j++){
+        for(int j = 0; j < n; j++){
             if(!col[j] && !rightDiagonal[row-j+n] && !leftDiagonal[row+j]){
                 col[j] = rightDiagonal[row-j+n] = leftDiagonal[row+j] = true;
-                nQueen(row+1, cnt+1, n);
+                nQueen(row +1, cnt+1, n);
                 col[j] = rightDiagonal[row-j+n] = leftDiagonal[row+j] = false;
             }
         }                
