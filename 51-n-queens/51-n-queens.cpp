@@ -2,7 +2,7 @@ class Solution {
 public:        
     vector<vector<string>>ans;        
     bool col[10], rightDiagonal[20], leftDiagonal[20];    
-    void nQueen(int row, int cnt, int n, vector<string>temp){
+    void nQueen(int row, int cnt, int n, vector<string>&temp){
         if(cnt == n){
             ans.push_back(temp);                         
             return;
