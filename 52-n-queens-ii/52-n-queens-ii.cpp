@@ -1,6 +1,5 @@
 class Solution {
-public:
-    char arr[10][10] = {'.'};
+public:    
     int ans = 0;
     bool col[10], rightDiagonal[20], leftDiagonal[20];
     void nQueen(int row, int cnt, int n){
