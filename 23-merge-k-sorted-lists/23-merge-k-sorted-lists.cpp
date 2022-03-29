@@ -10,32 +10,29 @@
  */
 class Solution {
 public:
-    ListNode* newHead, *tail;
-    void insertNode(int n){
-        ListNode* temp = new ListNode(n);
-        if(newHead==NULL){
-            newHead=temp;
-            tail=temp;
-            return;            
-        }
-        tail->next=temp;
-        tail=temp;
-    }
     ListNode* mergeKLists(vector<ListNode*>& lists) {
-        map<int,int>mp;
+        priority_queue<int,vector<int>,greater<int>>pq;
         for(int i=0;i<lists.size();i++){
             ListNode* temp=lists[i];
             while(temp!=NULL){
-                int n = temp->val;
-                mp[n]++;
+                pq.push(temp->val);
                 temp=temp->next;
             }
         }
-        for(auto it=mp.begin(); it!=mp.end(); it++){
-            while(it->second--){
-                insertNode(it->first);
+        ListNode* head = NULL;
+        ListNode* tail = NULL;
+        while(!pq.empty()){
+            ListNode* newNode = new ListNode(pq.top());
+            if(head==NULL){
+                head=newNode;
+                tail=newNode;                
             }
+            else{
+                tail->next=newNode;
+                tail=newNode;      
+            }
+            pq.pop();
         }
-        return newHead;
+        return head;
     }
 };
