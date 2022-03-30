@@ -20,6 +20,6 @@ public:
         return newNode;
     }
     TreeNode* sortedArrayToBST(vector<int>& nums) {        
-        return insertBstNode(nums, 0, nums.size() - 1);
+        return insertBstNode(nums, 0, nums.size() - 1); 
     }
 };
