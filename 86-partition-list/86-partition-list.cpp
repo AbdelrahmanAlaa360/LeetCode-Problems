@@ -23,12 +23,14 @@ public:
     }
     ListNode* partition(ListNode* head, int n) {        
         ListNode* temp = head;
+        // Less than N
         while (temp != NULL) {
             if(temp->val < n)
                 addToList(temp->val);                        
             temp = temp->next;
         }
         temp = head;
+        // Greater than or equal N
         while (temp != NULL) {
             if(temp->val >= n)
                 addToList(temp->val);    
