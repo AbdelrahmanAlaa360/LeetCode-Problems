@@ -10,42 +10,30 @@
  */
 class Solution {
 public:
-    ListNode *head1, *head2;
-    void addToList(ListNode* &temp, ListNode* &node){
-        while(temp->next!=NULL){
-            temp=temp->next;
-        }   
-        temp->next=node;
+    ListNode *newHead, *tail;
+    void addToList(int val){
+        ListNode* newNode = new ListNode(val);
+        if(newHead == NULL){
+            newHead = newNode;
+            tail = newNode;
+            return;
+        }
+        tail->next = newNode;
+        tail = newNode;        
     }
     ListNode* partition(ListNode* head, int n) {        
         ListNode* temp = head;
         while (temp != NULL) {
-            ListNode* node = new ListNode;
-            node->val = temp->val;
-            node->next=NULL;
-            if (temp->val < n) {                                   
-                if(head1==NULL) head1=node;                
-                else{
-                    ListNode* temp2 = head1;
-                    addToList(temp2, node);
-                }
-            }
-            else {         
-                if(head2==NULL) head2=node;                                    
-                else{
-                    ListNode* temp2 = head2;                                        
-                    addToList(temp2, node);
-                }
-            }
+            if(temp->val < n)
+                addToList(temp->val);                        
             temp = temp->next;
-            
-        }         
-        temp = head1;
-        if(temp == NULL)return head2;
-        while(temp->next!=NULL){
-            temp=temp->next;
         }
-        temp->next=head2;
-        return head1;
+        temp = head;
+        while (temp != NULL) {
+            if(temp->val >= n)
+                addToList(temp->val);    
+            temp = temp->next;
+        }
+        return newHead;
     }
 };
