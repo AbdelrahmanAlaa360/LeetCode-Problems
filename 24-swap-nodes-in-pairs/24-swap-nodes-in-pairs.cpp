@@ -14,7 +14,9 @@ public:
         if(head == NULL || head->next == NULL)return head;
         ListNode* temp = head;
         while(temp != NULL && temp->next != NULL){
-            swap(temp->val, temp->next->val);
+            int n = temp->val;
+            temp->val = temp->next->val;
+            temp->next->val = n;            
             temp = temp->next->next;
         }
         return head;
