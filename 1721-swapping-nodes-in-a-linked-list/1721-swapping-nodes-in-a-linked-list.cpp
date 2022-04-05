@@ -18,23 +18,22 @@ public:
             temp = temp->next;
         }        
         temp = head;
-        ListNode* val1, *val2;
-        int data1, data2;
-        int idx = 0;
+        ListNode* node1, *node2;
+        int data1, data2, idx = 0;
         while(temp != NULL){
             idx++;
             if(idx == k) {
-                val1 = temp;
+                node1 = temp;
                 data1 = temp->val;
             }
             if(idx == sz - k + 1) {
-                val2 = temp;
+                node2 = temp;
                 data2 = temp->val;
             }
             temp = temp->next;
         }
-        val1->val = data2; 
-        val2->val = data1;
+        node1->val = data2; 
+        node2->val = data1;
         return head;
     }
 };
