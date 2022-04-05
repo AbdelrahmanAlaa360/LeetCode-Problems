@@ -33,7 +33,7 @@ public:
             }
             temp = temp->next;
         }
-        val1->val = data2;
+        val1->val = data2; 
         val2->val = data1;
         return head;
     }
