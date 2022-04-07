@@ -27,7 +27,7 @@ public:
         InorderTraversal(root->left, k);        
         v.push_back(root->val);
         InorderTraversal(root->right, k);
-    }
+    } 
     int kthSmallest(TreeNode* root, int k) {                
         InorderTraversal(root, k);
         return v[k - 1];
