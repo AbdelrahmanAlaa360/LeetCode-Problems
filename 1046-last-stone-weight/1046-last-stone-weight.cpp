@@ -13,7 +13,6 @@ public:
             if(x != y)
                 pq.push(x - y);
         }
-        if(pq.empty())return 0;
-        else return pq.top();
+        return pq.empty() ? 0 : pq.top();
     }
 };
