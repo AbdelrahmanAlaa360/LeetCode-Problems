@@ -31,7 +31,7 @@ public:
             newHead = newHead->next;
         }
         while(temp2){
-            newHead->next = temp2;
+            newHead->next = temp2; 
             temp2=temp2->next;
             newHead = newHead->next;
         }
