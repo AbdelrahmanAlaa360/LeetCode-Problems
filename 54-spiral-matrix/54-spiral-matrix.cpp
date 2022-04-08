@@ -20,7 +20,7 @@ public:
         for(int i = bottom; i >= top; i--) ans.push_back(matrix[i][left]);
         left++;        
         if(!check(top, bottom, left, right))return;
-        generateMatrix(matrix);
+        generateMatrix(matrix);  
     }
     vector<int> spiralOrder(vector<vector<int>>& matrix) {
         top = 0, left = 0, bottom = matrix.size() - 1, right = matrix[0].size() - 1;       
