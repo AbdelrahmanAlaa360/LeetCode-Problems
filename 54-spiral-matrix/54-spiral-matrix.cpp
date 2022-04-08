@@ -27,7 +27,7 @@ public:
             ans.push_back(matrix[i][left]);
         }
         left++;        
-        if(!check(top, bottom, left, right))return;
+        if(!check(top, bottom, left, right))return; 
         generateMatrix(matrix); 
     }
     vector<int> spiralOrder(vector<vector<int>>& matrix) {
