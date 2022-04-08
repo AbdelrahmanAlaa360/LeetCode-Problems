@@ -27,7 +27,7 @@ public:
         }
         while(temp1){
             newHead->next = temp1;
-            temp1=temp1->next;
+            temp1=temp1->next; 
             newHead = newHead->next;
         } 
         while(temp2){
