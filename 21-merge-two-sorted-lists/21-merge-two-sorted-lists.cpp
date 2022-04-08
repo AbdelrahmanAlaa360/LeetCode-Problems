@@ -16,7 +16,7 @@ public:
         ListNode* newHead = dummy;
         while(temp1 && temp2){
             if(temp1->val <= temp2->val){
-                newHead->next = temp1;
+                newHead->next = temp1; 
                 temp1=temp1->next;
             }
             else{
