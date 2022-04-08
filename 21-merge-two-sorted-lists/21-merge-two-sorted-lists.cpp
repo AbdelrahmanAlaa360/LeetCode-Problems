@@ -10,37 +10,31 @@
  */
 class Solution {
 public:
-    ListNode *newHead, *tail;
-    void insertNode(int n){
-        ListNode* newNode = new ListNode(n);
-        if(newHead==NULL){
-            newHead=newNode;
-            tail=newNode;
-            return;
-        }
-        tail->next=newNode;
-        tail=newNode;
-    }        
+    ListNode *dummy = new ListNode();    
     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
         ListNode *temp1 = list1, *temp2 = list2;
-        while(temp1!=NULL && temp2!=NULL){
+        ListNode* newHead = dummy;
+        while(temp1 && temp2){
             if(temp1->val <= temp2->val){
-                insertNode(temp1->val);
+                newHead->next = temp1;
                 temp1=temp1->next;
             }
             else{
-                insertNode(temp2->val);
+                newHead->next = temp2;
                 temp2=temp2->next;
             }
+            newHead = newHead->next;
         }
-        while(temp1!=NULL){
-            insertNode(temp1->val);
+        while(temp1){
+            newHead->next = temp1;
             temp1=temp1->next;
+            newHead = newHead->next;
         }
-        while(temp2!=NULL){
-            insertNode(temp2->val);
+        while(temp2){
+            newHead->next = temp2;
             temp2=temp2->next;
+            newHead = newHead->next;
         }
-        return newHead;
+        return dummy->next;
     }
 };
