@@ -1,6 +1,36 @@
 class Solution {
 public:
     string reverseWords(string s) {
+        reverse(s.begin(), s.end());
+        s.push_back(' ');
+        int start = 0;
+        for(int i = 0; i < s.size(); i++){            
+            if(i + 1 < s.size() && s[i] == ' ' && s[i + 1] == ' '){
+                s.erase(s.begin() + i);
+                i--;
+                continue;
+            }
+            if(s[i] == ' '){
+                int end = i;                         
+                while(start < end){
+                    swap(s[start], s[end]);
+                    start++, end--;
+                }
+                start = i + 1;
+            }
+        }        
+        while(s[0] == ' '){
+            s = s.substr(1);
+        }
+        int i = s.size() - 1;
+        while(s[i] == ' ' && i >= 0){
+            s.pop_back();
+            i--;
+        }
+        
+        return s;
+        
+        /*
         string ans = "";
         vector<int>spaceIndexes;        
         spaceIndexes.push_back(0);
@@ -31,5 +61,6 @@ public:
             if(start != 0 && ans.back() != ' ') ans.push_back(' ');
         }
         return ans;
+        */
     }
 };
