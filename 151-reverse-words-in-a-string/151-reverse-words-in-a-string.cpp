@@ -14,8 +14,7 @@ public:
         while(s[i] == ' ' && i < s.size()){
             if(s[i] == ' ') s = s.substr(1);            
             else i++;
-        }
-        cout << s;
+        }        
         for(int i = 0; i < s.size(); i++){
             if(s[i] == ' ')
                 spaceIndexes.push_back(i);
