@@ -22,7 +22,7 @@ public:
         spaceIndexes.push_back(s.size());
         for(int i = spaceIndexes.size() - 1; i > 0; i--){
             int start = spaceIndexes[i - 1];
-            int end = spaceIndexes[i];
+            int end = spaceIndexes[i]; 
             if(start)start++;
             for(int j = start; j < end; j++){
                 if(s[j] != ' ')
