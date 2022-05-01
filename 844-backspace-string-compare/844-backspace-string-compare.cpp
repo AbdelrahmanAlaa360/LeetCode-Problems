@@ -14,7 +14,6 @@ public:
             else if(T[i] != '#')
                 st2.push(T[i]);
         }
-        return st == st2;
-        
+        return st == st2;        
     }
 };
