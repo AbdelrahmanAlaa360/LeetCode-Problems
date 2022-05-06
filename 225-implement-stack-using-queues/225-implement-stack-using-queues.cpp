@@ -15,7 +15,7 @@ public:
     int pop() {      
         int n = q.size() - 1;               
         while(n--){           
-            peek = q.front();
+            peek = q.front(); 
             q.push(peek);
             q.pop();
         }         
