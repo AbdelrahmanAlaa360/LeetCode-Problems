@@ -14,8 +14,8 @@ public:
             else {
                 ans += (boxTypes[i][0] * truckSize);
                 truckSize = 0;                
-            }            
-        }        
+            }
+        }    
         return ans;
     }
 };
