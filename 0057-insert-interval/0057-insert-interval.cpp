@@ -7,7 +7,7 @@ public:
         if(!intervals.empty()){
             if(start < intervals[0][0]) ans.push_back(newInterval);
             else ans.push_back(intervals[0]);
-        }    
+        }   
         int i = 0;
         while(i < intervals.size()){
             if(start < intervals[i][0]){
@@ -17,7 +17,7 @@ public:
             i++;
         }
         if(i == intervals.size()) intervals.push_back(newInterval);
-        i=1;
+        i = 1;
         while(i < intervals.size()){
             int n = ans.size();
             if(ans[n-1][1] >= intervals[i][0]){
