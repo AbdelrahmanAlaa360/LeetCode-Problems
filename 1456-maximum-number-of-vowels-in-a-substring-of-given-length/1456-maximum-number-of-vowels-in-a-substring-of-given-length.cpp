@@ -14,6 +14,6 @@ public:
             if(isVowel(s[i]))cnt++;
             mx = max(mx, cnt);
         }
-        return mx;
+        return mx; 
     }
 };
