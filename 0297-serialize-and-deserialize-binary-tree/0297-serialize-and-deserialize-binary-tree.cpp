@@ -27,7 +27,7 @@ public:
         if(root == NULL) {
             out << "# ";
             return;
-        }
+        } 
         out << root->val << ' ';
         getStream(root->left, out);
         getStream(root->right, out);
