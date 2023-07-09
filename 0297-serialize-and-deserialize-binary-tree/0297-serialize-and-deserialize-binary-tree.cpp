@@ -12,18 +12,18 @@ public:
 
     // Encodes a tree to a single string.
     string serialize(TreeNode* root) {
-        stringstream out;
+        ostringstream out;
         getStream(root, out);
         return out.str();
     }
 
     // Decodes your encoded data to tree.
     TreeNode* deserialize(string data) {
-        stringstream in(data);
+        istringstream in(data);
         return buildTree(in);
     }
     
-    void getStream(TreeNode* root, stringstream &out) {
+    void getStream(TreeNode* root, ostringstream &out) {
         if(root == NULL) {
             out << "# ";
             return;
@@ -33,7 +33,7 @@ public:
         getStream(root->right, out);
     }
 
-    TreeNode* buildTree(stringstream &in) {
+    TreeNode* buildTree(istringstream &in) {
         string val;
         in >> val;
         if(val == "#") return NULL;
